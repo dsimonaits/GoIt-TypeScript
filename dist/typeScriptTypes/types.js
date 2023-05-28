@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let age;
 age = 50;
 let userName;
@@ -13,18 +14,22 @@ let callbackFunc;
 callbackFunc = (a) => {
     return 100 + a;
 };
+//-----------------
 let anything;
 anything = -20;
 anything = "Text";
 anything = {};
+//-----------------
 let some;
 some = "Text";
 let str;
 if (typeof some === "string") {
     str = some;
 }
+//-----------------
 let person;
 person = ["Max", 21];
+//-----------------
 var Load;
 (function (Load) {
     Load[Load["LOADING"] = 0] = "LOADING";
@@ -37,6 +42,7 @@ if (page.load === Load.LOADING) {
 if (page.load === Load.READY) {
     console.log("Page loaded");
 }
+//-----------------
 let union;
 let literal;
 function showMessage(message) {
@@ -64,6 +70,7 @@ const page2 = {
     accounts: ["Alex"],
     status: "close",
 };
+//-----------------
 function createServerPerson(name) {
     return (() => {
         return { name: `${name}` };
@@ -74,6 +81,7 @@ function createPerson(name) {
 }
 const newPerson = createPerson("Alex");
 console.log(newPerson);
+//-----------------
 function culc(num1, num2, callback) {
     return callback(num1, num2);
 }
