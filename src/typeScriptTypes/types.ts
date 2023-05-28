@@ -18,14 +18,14 @@ callback = (a) => {
   return 100 + a;
 };
 
-//
+//-----------------
 
 let anything: any;
 anything = -20;
 anything = "Text";
 anything = {};
 
-//
+//-----------------
 
 let some: unknown;
 
@@ -33,14 +33,16 @@ some = "Text";
 
 let str: string;
 
-if (typeof some === "string") { str = some };
+if (typeof some === "string") {
+  str = some;
+}
 
-//
+//-----------------
 
 let person: [string, number];
 person = ["Max", 21];
 
-//
+//-----------------
 
 enum Load {
   LOADING,
@@ -57,7 +59,7 @@ if (page.load === Load.READY) {
   console.log("Page loaded");
 }
 
-//
+//-----------------
 
 let union: string | number;
 
@@ -75,13 +77,13 @@ function customError(): never {
   throw new Error("Error");
 }
 
-//
+//-----------------
 
 type Page = {
   title: string;
   likes: number;
   accounts: string[];
-  status: string;
+  status: "open" | "close";
   details?: { createAt: string; updateAt: string };
 };
 
@@ -102,3 +104,19 @@ const page2: Page = {
   accounts: ["Alex"],
   status: "close",
 };
+
+//-----------------
+
+function createServerPerson(name: string) {
+  return (() => {
+    return { name: `${name}` };
+  })();
+}
+
+function createPerson(name: string) {
+  return createServerPerson(name);
+}
+
+const newPerson = createPerson("Alex");
+
+console.log(newPerson);

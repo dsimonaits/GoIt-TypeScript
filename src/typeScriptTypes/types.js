@@ -24,8 +24,6 @@ var str;
 if (typeof some === "string") {
     str = some;
 }
-;
-console.log(str);
 //
 var person;
 person = ["Max", 21];
@@ -70,3 +68,13 @@ var page2 = {
     accounts: ["Alex"],
     status: "close",
 };
+function createServerPerson(name) {
+    return (function () {
+        return { name: "".concat(name) };
+    })();
+}
+function createPerson(name) {
+    return createServerPerson(name);
+}
+var newPerson = createPerson("Alex");
+console.log(newPerson);
