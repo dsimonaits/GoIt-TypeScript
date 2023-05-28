@@ -13,8 +13,8 @@ empty = null;
 let notInitialize: undefined;
 notInitialize = undefined;
 
-let callback: (a: number) => number;
-callback = (a) => {
+let callbackFunc: (a: number) => number;
+callbackFunc = (a) => {
   return 100 + a;
 };
 
@@ -113,10 +113,30 @@ function createServerPerson(name: string) {
   })();
 }
 
-function createPerson(name: string) {
+function createPerson(name: string): {name: string} {
   return createServerPerson(name);
 }
 
 const newPerson = createPerson("Alex");
 
 console.log(newPerson);
+
+//-----------------
+
+function culc(num1:number, num2:number, callback: (arrg1: number, arrg2:number) => number ) {
+return callback(num1, num2)
+}
+
+function foo(num1: number, num2: number) {
+  return num1 + num2;
+}
+
+const result = culc(1, 2, foo)
+
+console.log(result);
+
+//-----------------
+
+
+//----------------- custom types
+

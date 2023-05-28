@@ -9,8 +9,8 @@ let empty;
 empty = null;
 let notInitialize;
 notInitialize = undefined;
-let callback;
-callback = (a) => {
+let callbackFunc;
+callbackFunc = (a) => {
     return 100 + a;
 };
 let anything;
@@ -20,8 +20,9 @@ anything = {};
 let some;
 some = "Text";
 let str;
-if (typeof some === "string")
+if (typeof some === "string") {
     str = some;
+}
 let person;
 person = ["Max", 21];
 var Load;
@@ -63,4 +64,22 @@ const page2 = {
     accounts: ["Alex"],
     status: "close",
 };
+function createServerPerson(name) {
+    return (() => {
+        return { name: `${name}` };
+    })();
+}
+function createPerson(name) {
+    return createServerPerson(name);
+}
+const newPerson = createPerson("Alex");
+console.log(newPerson);
+function culc(num1, num2, callback) {
+    return callback(num1, num2);
+}
+function foo(num1, num2) {
+    return num1 + num2;
+}
+const result = culc(1, 2, foo);
+console.log(result);
 //# sourceMappingURL=types.js.map
