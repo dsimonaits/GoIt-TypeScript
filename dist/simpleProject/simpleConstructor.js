@@ -1,5 +1,4 @@
-"use strict";
-class House {
+export class House {
     constructor(n) {
         this.street = n;
     }
