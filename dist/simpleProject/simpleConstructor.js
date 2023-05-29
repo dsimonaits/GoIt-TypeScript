@@ -3,8 +3,15 @@ class House {
     constructor(n) {
         this.street = n;
     }
+    showAddress() {
+        console.log('Address ' + this.street);
+    }
 }
-const house = new House('Middle-earth');
-const house2 = new House('Middle-earth2');
-const house3 = new House('Middle-earth3');
+const newHouse = new House('Middle-earth');
+newHouse.showAddress();
+const copyNewHouse = {
+    street: 'Sanctuary',
+    showAddress: newHouse.showAddress,
+};
+copyNewHouse.showAddress();
 //# sourceMappingURL=simpleConstructor.js.map
