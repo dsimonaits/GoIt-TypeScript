@@ -1,11 +1,22 @@
-class House {
+export class House {
   street: string;
 
   constructor(n: string) {
     this.street = n;
   }
+
+  showAddress(this: House): void {
+    console.log('Address ' + this.street);
+  }
 }
 
-const house = new House('Middle-earth');
-const house2 = new House('Middle-earth2');
-const house3 = new House('Middle-earth3');
+const newHouse = new House('Middle-earth');
+
+newHouse.showAddress();
+
+const copyNewHouse = {
+  street: 'Sanctuary',
+  showAddress: newHouse.showAddress,
+};
+
+copyNewHouse.showAddress();

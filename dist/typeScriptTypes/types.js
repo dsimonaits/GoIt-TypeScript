@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let age;
 age = 50;
 let userName;
@@ -90,4 +88,5 @@ function foo(num1, num2) {
 }
 const result = culc(1, 2, foo);
 console.log(result);
+export {};
 //# sourceMappingURL=types.js.map
